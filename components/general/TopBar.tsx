@@ -5,6 +5,7 @@ import {
   X, Check, LogOut, ShieldCheck, User, Info, Sliders, LogIn, Sparkles
 } from 'lucide-react';
 import { Establishment, AppNotification, AppItem, HelpTopic } from '@/src/types';
+import AcademicContextSelector from './AcademicContextSelector';
 
 interface TopBarProps {
   establishments: Establishment[];
@@ -185,6 +186,10 @@ export default function TopBar({
             </div>
           )}
         </div>
+
+        <div className="w-px h-6 bg-slate-100 mx-2.5 shrink-0" />
+
+        <AcademicContextSelector onSelect={() => {}} />
       </div>
 
       {/* MIDDLE: Dynamic Container Slot */}
