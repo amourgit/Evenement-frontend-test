@@ -157,7 +157,9 @@ export default function CivitasApp({
         <Header />
         <div className="flex min-h-screen w-full flex-col bg-transparent">
           <div className="flex-1 w-full">
-            <CivitasRoutes basePath={resolvedBase} />
+            <Suspense fallback={<PageLoader />}>
+              <CivitasRoutes basePath={resolvedBase} />
+            </Suspense>
           </div>
           <GlobalFooter />
         </div>
