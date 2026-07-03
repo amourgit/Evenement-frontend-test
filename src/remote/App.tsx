@@ -24,6 +24,7 @@ const EventRegistrationPage = React.lazy(() => import('../pages/event/EventRegis
 const EventNotFoundPage = React.lazy(() => import('../pages/event/EventNotFoundPage'));
 const ConfirmationPage = React.lazy(() => import('../pages/event/ConfirmationPage'));
 const AdminApp = React.lazy(() => import('../pages/admin/AdminApp'));
+const GeneralPage = React.lazy(() => import('../pages/general/GeneralPage'));
 
 
 // ── Props contrat Core ─────────────────────────────────────────
