@@ -1,0 +1,704 @@
+{
+  "meta": {
+    "note": "Base de donnees FICTIVE pour developpement et tests uniquement. Mots de passe en clair volontairement, ne jamais reproduire en production.",
+    "seed_version": "1.0.0",
+    "generated_at": "2026-06-15T09:00:00.000Z"
+  },
+
+  "admins": [
+    {
+      "id": "admin_001",
+      "email": "admin@civitas.test",
+      "password": "Admin!2026",
+      "full_name": "Alioune Ndiaye",
+      "role": "owner",
+      "created_at": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "admin_002",
+      "email": "editrice@civitas.test",
+      "password": "Editrice!2026",
+      "full_name": "Fatou Sarr",
+      "role": "editor",
+      "created_at": "2026-02-02T09:00:00.000Z"
+    },
+    {
+      "id": "admin_003",
+      "email": "viewer@civitas.test",
+      "password": "Viewer!2026",
+      "full_name": "Jean Moke",
+      "role": "viewer",
+      "created_at": "2026-02-20T09:00:00.000Z"
+    }
+  ],
+
+  "events": [
+    {
+      "id": "evt_conf2026",
+      "slug": "conf-devcivitas-2026",
+      "owner_id": "admin_001",
+      "title": "Conference DevCivitas 2026",
+      "short_description": "Trois jours de conferences et d'ateliers autour du developpement civique numerique.",
+      "long_description": "La conference DevCivitas reunit developpeurs, designers et institutions autour des outils numeriques au service des citoyens. Au programme : conferences plenieres, ateliers pratiques, et un espace networking.\n\nLieu : Centre de conferences de Libreville.\nDates : du 14 au 16 septembre 2026.",
+      "status": "open",
+      "starts_at": "2026-09-14T08:30:00.000Z",
+      "ends_at": "2026-09-16T18:00:00.000Z",
+      "registration_deadline": "2026-09-01T23:59:00.000Z",
+      "capacity": 300,
+      "theme": {
+        "accent_color": "#6C7BFF",
+        "accent_soft_color": "#3B3FBF",
+        "background_style": "dark",
+        "radius": "soft",
+        "layout": "centered",
+        "display_font": "space_grotesk"
+      },
+      "ai_config": {
+        "enabled": true,
+        "system_prompt": "Tu es l'assistant d'inscription de la conference DevCivitas 2026. Reponds de facon concise et chaleureuse, uniquement a partir du contexte fourni. Le formulaire comporte deux sections : Informations personnelles et Details de participation.",
+        "tone": "chaleureux",
+        "knowledge_source_ids": ["src_conf2026_brief"],
+        "can_explain_fields": true,
+        "can_summarize_event": true,
+        "can_suggest_schema": true
+      },
+      "sections": [
+        {
+          "id": "sec_conf_info",
+          "event_id": "evt_conf2026",
+          "title": "Informations personnelles",
+          "description": "Vos coordonnees pour recevoir votre badge et les communications de l'evenement.",
+          "display_order": 0
+        },
+        {
+          "id": "sec_conf_part",
+          "event_id": "evt_conf2026",
+          "title": "Details de participation",
+          "description": "Personnalisez votre parcours sur les trois jours.",
+          "display_order": 1
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_conf_fullname",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_info",
+          "key": "nom_complet",
+          "label": "Nom complet",
+          "placeholder": "Ex : Awa Diallo",
+          "data_type": "short_text",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "min_length": 2,
+          "max_length": 80,
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_email",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_info",
+          "key": "email",
+          "label": "Adresse email",
+          "help_text": "Votre badge et votre confirmation seront envoyes a cette adresse.",
+          "data_type": "email",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": true,
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_phone",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_info",
+          "key": "telephone",
+          "label": "Telephone",
+          "data_type": "phone",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_org",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_info",
+          "key": "organisation",
+          "label": "Organisation / entreprise",
+          "data_type": "short_text",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "max_length": 100,
+          "display_order": 3,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_ticket",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_part",
+          "key": "type_billet",
+          "label": "Type de billet",
+          "data_type": "single_select",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "options": [
+            { "id": "opt_ticket_std", "label": "Standard", "value": "standard" },
+            { "id": "opt_ticket_vip", "label": "VIP", "value": "vip" },
+            { "id": "opt_ticket_etu", "label": "Etudiant", "value": "etudiant" }
+          ],
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_workshops",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_part",
+          "key": "ateliers",
+          "label": "Ateliers souhaites",
+          "help_text": "Vous pourrez ajuster votre choix sur place selon les disponibilites.",
+          "data_type": "multi_select",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "options": [
+            { "id": "opt_ws_ia", "label": "Atelier IA appliquee", "value": "atelier_ia" },
+            { "id": "opt_ws_sec", "label": "Atelier securite", "value": "atelier_securite" },
+            { "id": "opt_ws_ux", "label": "Atelier UX civique", "value": "atelier_ux" }
+          ],
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_diet",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_part",
+          "key": "regime_alimentaire",
+          "label": "Regime alimentaire",
+          "data_type": "single_select",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "default_value": "aucun",
+          "options": [
+            { "id": "opt_diet_aucun", "label": "Aucun", "value": "aucun" },
+            { "id": "opt_diet_vege", "label": "Vegetarien", "value": "vegetarien" },
+            { "id": "opt_diet_vegan", "label": "Vegan", "value": "vegan" },
+            { "id": "opt_diet_halal", "label": "Halal", "value": "halal" }
+          ],
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_conf_newsletter",
+          "event_id": "evt_conf2026",
+          "section_id": "sec_conf_part",
+          "key": "newsletter",
+          "label": "Recevoir la newsletter DevCivitas",
+          "placeholder": "Oui, je souhaite recevoir les actualites",
+          "data_type": "boolean",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "default_value": false,
+          "display_order": 3,
+          "condition": null,
+          "created_at": "2026-06-01T10:00:00.000Z",
+          "updated_at": "2026-06-01T10:00:00.000Z"
+        }
+      ],
+      "created_at": "2026-06-01T10:00:00.000Z",
+      "updated_at": "2026-06-20T14:00:00.000Z"
+    },
+
+    {
+      "id": "evt_gala",
+      "slug": "gala-lumiere",
+      "owner_id": "admin_002",
+      "title": "Gala de charite Lumiere",
+      "short_description": "Soiree de levee de fonds au profit des ecoles rurales.",
+      "long_description": "Une soiree elegante pour soutenir la construction de trois nouvelles ecoles. Diner assis, tombola et enchere silencieuse.",
+      "status": "draft",
+      "starts_at": "2026-11-20T18:00:00.000Z",
+      "ends_at": "2026-11-20T23:30:00.000Z",
+      "registration_deadline": "2026-11-10T23:59:00.000Z",
+      "capacity": 150,
+      "theme": {
+        "accent_color": "#D4AF37",
+        "accent_soft_color": "#8A6D1F",
+        "background_style": "dark",
+        "radius": "round",
+        "layout": "split",
+        "display_font": "playfair"
+      },
+      "ai_config": {
+        "enabled": true,
+        "system_prompt": "Tu es l'assistant du Gala de charite Lumiere. Adopte un ton formel et elegant. Explique le fonctionnement du don et de la reservation de table si on te le demande.",
+        "tone": "formel",
+        "knowledge_source_ids": ["src_gala_brief"],
+        "can_explain_fields": true,
+        "can_summarize_event": true,
+        "can_suggest_schema": false
+      },
+      "sections": [
+        {
+          "id": "sec_gala_identite",
+          "event_id": "evt_gala",
+          "title": "Identite",
+          "display_order": 0
+        },
+        {
+          "id": "sec_gala_don",
+          "event_id": "evt_gala",
+          "title": "Don et message",
+          "description": "Votre contribution finance directement la construction des ecoles.",
+          "display_order": 1
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_gala_fullname",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_identite",
+          "key": "nom_complet",
+          "label": "Nom complet",
+          "data_type": "short_text",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "max_length": 80,
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_email",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_identite",
+          "key": "email",
+          "label": "Adresse email",
+          "data_type": "email",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": true,
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_table",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_identite",
+          "key": "table_preferee",
+          "label": "Table preferee",
+          "data_type": "single_select",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "options": [
+            { "id": "opt_table_or", "label": "Table Or", "value": "or" },
+            { "id": "opt_table_argent", "label": "Table Argent", "value": "argent" },
+            { "id": "opt_table_bronze", "label": "Table Bronze", "value": "bronze" }
+          ],
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_montant",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_don",
+          "key": "montant_don",
+          "label": "Montant du don (EUR)",
+          "data_type": "decimal",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "min_value": 20,
+          "max_value": 10000,
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_message",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_don",
+          "key": "message",
+          "label": "Message (optionnel)",
+          "data_type": "long_text",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "max_length": 500,
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_anonyme",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_don",
+          "key": "don_anonyme",
+          "label": "Souhaite rester anonyme",
+          "data_type": "boolean",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "default_value": false,
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        },
+        {
+          "id": "f_gala_signature",
+          "event_id": "evt_gala",
+          "section_id": "sec_gala_don",
+          "key": "signature",
+          "label": "Signature",
+          "data_type": "signature",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "display_order": 3,
+          "condition": null,
+          "created_at": "2026-06-05T10:00:00.000Z",
+          "updated_at": "2026-06-05T10:00:00.000Z"
+        }
+      ],
+      "created_at": "2026-06-05T10:00:00.000Z",
+      "updated_at": "2026-06-18T09:00:00.000Z"
+    },
+
+    {
+      "id": "evt_hackathon",
+      "slug": "hackathon-civitas",
+      "owner_id": "admin_001",
+      "title": "Hackathon CIVITAS",
+      "short_description": "48h pour prototyper des outils numeriques au service des communes.",
+      "long_description": "Le Hackathon CIVITAS reunit des equipes de 2 a 5 personnes autour de defis proposes par des collectivites partenaires. Les inscriptions sont closes ; retrouvez ci-dessous les equipes engagees.",
+      "status": "closed",
+      "starts_at": "2026-05-09T09:00:00.000Z",
+      "ends_at": "2026-05-11T18:00:00.000Z",
+      "registration_deadline": "2026-05-01T23:59:00.000Z",
+      "capacity": 60,
+      "theme": {
+        "accent_color": "#3DDC84",
+        "accent_soft_color": "#1F8C4C",
+        "background_style": "dark",
+        "radius": "sharp",
+        "layout": "fullbleed",
+        "display_font": "sora"
+      },
+      "ai_config": {
+        "enabled": false,
+        "system_prompt": "",
+        "tone": "neutre",
+        "knowledge_source_ids": [],
+        "can_explain_fields": false,
+        "can_summarize_event": false,
+        "can_suggest_schema": false
+      },
+      "sections": [
+        {
+          "id": "sec_hack_equipe",
+          "event_id": "evt_hackathon",
+          "title": "Equipe",
+          "display_order": 0
+        },
+        {
+          "id": "sec_hack_projet",
+          "event_id": "evt_hackathon",
+          "title": "Projet et disponibilites",
+          "display_order": 1
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_hack_teamname",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_equipe",
+          "key": "nom_equipe",
+          "label": "Nom de l'equipe",
+          "data_type": "short_text",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": true,
+          "min_length": 2,
+          "max_length": 40,
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_github",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_equipe",
+          "key": "lien_github",
+          "label": "Lien GitHub de l'equipe",
+          "data_type": "url",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_size",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_equipe",
+          "key": "taille_equipe",
+          "label": "Taille de l'equipe",
+          "data_type": "number",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "min_value": 1,
+          "max_value": 5,
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_skills",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_projet",
+          "key": "competences",
+          "label": "Competences de l'equipe",
+          "data_type": "multi_select",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "options": [
+            { "id": "opt_skill_js", "label": "JavaScript / TypeScript", "value": "js" },
+            { "id": "opt_skill_py", "label": "Python", "value": "python" },
+            { "id": "opt_skill_design", "label": "Design produit", "value": "design" },
+            { "id": "opt_skill_data", "label": "Data / IA", "value": "data" }
+          ],
+          "display_order": 0,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_start",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_projet",
+          "key": "disponible_a_partir_de",
+          "label": "Disponible a partir de",
+          "data_type": "datetime",
+          "is_required": true,
+          "is_nullable": false,
+          "is_unique": false,
+          "display_order": 1,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_level",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_projet",
+          "key": "niveau_experience",
+          "label": "Niveau d'experience moyen",
+          "data_type": "rating",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "min_value": 1,
+          "max_value": 5,
+          "display_order": 2,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        },
+        {
+          "id": "f_hack_cv",
+          "event_id": "evt_hackathon",
+          "section_id": "sec_hack_projet",
+          "key": "cv_capitaine",
+          "label": "CV du capitaine d'equipe (optionnel)",
+          "data_type": "file",
+          "is_required": false,
+          "is_nullable": true,
+          "is_unique": false,
+          "accepted_mime_types": ["application/pdf"],
+          "max_file_size_mb": 5,
+          "display_order": 3,
+          "condition": null,
+          "created_at": "2026-04-01T10:00:00.000Z",
+          "updated_at": "2026-04-01T10:00:00.000Z"
+        }
+      ],
+      "created_at": "2026-04-01T10:00:00.000Z",
+      "updated_at": "2026-05-02T10:00:00.000Z"
+    }
+  ],
+
+  "submissions": [
+    {
+      "id": "sub_conf_001",
+      "event_id": "evt_conf2026",
+      "reference_code": "DVC26-000001",
+      "answers": {
+        "f_conf_fullname": "Awa Diallo",
+        "f_conf_email": "awa.diallo@example.com",
+        "f_conf_phone": "+241 06 12 34 56",
+        "f_conf_org": "Ministere du Numerique",
+        "f_conf_ticket": "vip",
+        "f_conf_workshops": ["atelier_ia", "atelier_ux"],
+        "f_conf_diet": "vegetarien",
+        "f_conf_newsletter": true
+      },
+      "submitted_at": "2026-06-10T11:20:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "sub_conf_002",
+      "event_id": "evt_conf2026",
+      "reference_code": "DVC26-000002",
+      "answers": {
+        "f_conf_fullname": "Brice Moussavou",
+        "f_conf_email": "brice.moussavou@example.com",
+        "f_conf_phone": "+241 07 65 43 21",
+        "f_conf_org": "",
+        "f_conf_ticket": "standard",
+        "f_conf_workshops": ["atelier_securite"],
+        "f_conf_diet": "aucun",
+        "f_conf_newsletter": false
+      },
+      "submitted_at": "2026-06-12T15:05:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "sub_conf_003",
+      "event_id": "evt_conf2026",
+      "reference_code": "DVC26-000003",
+      "answers": {
+        "f_conf_fullname": "Chantal Obiang",
+        "f_conf_email": "chantal.obiang@example.com",
+        "f_conf_phone": "",
+        "f_conf_org": "Universite Omar Bongo",
+        "f_conf_ticket": "etudiant",
+        "f_conf_workshops": ["atelier_ia", "atelier_securite", "atelier_ux"],
+        "f_conf_diet": "vegan",
+        "f_conf_newsletter": true
+      },
+      "submitted_at": "2026-06-14T09:40:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "sub_conf_004",
+      "event_id": "evt_conf2026",
+      "reference_code": "DVC26-000004",
+      "answers": {
+        "f_conf_fullname": "David Essono",
+        "f_conf_email": "david.essono@example.com",
+        "f_conf_phone": "+241 05 11 22 33",
+        "f_conf_org": "Essono Consulting",
+        "f_conf_ticket": "standard",
+        "f_conf_workshops": [],
+        "f_conf_diet": "halal",
+        "f_conf_newsletter": false
+      },
+      "submitted_at": "2026-06-19T17:55:00.000Z",
+      "status": "confirmed"
+    },
+
+    {
+      "id": "sub_hack_001",
+      "event_id": "evt_hackathon",
+      "reference_code": "HCK26-000001",
+      "answers": {
+        "f_hack_teamname": "Les Baobabs Numeriques",
+        "f_hack_github": "https://github.com/baobabs-numeriques",
+        "f_hack_size": 4,
+        "f_hack_skills": ["js", "design"],
+        "f_hack_start": "2026-05-09T08:00:00.000Z",
+        "f_hack_level": 4,
+        "f_hack_cv": null
+      },
+      "submitted_at": "2026-04-15T10:00:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "sub_hack_002",
+      "event_id": "evt_hackathon",
+      "reference_code": "HCK26-000002",
+      "answers": {
+        "f_hack_teamname": "DataMbolo",
+        "f_hack_github": "https://github.com/datambolo",
+        "f_hack_size": 3,
+        "f_hack_skills": ["python", "data"],
+        "f_hack_start": "2026-05-09T09:00:00.000Z",
+        "f_hack_level": 5,
+        "f_hack_cv": null
+      },
+      "submitted_at": "2026-04-18T14:30:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "sub_hack_003",
+      "event_id": "evt_hackathon",
+      "reference_code": "HCK26-000003",
+      "answers": {
+        "f_hack_teamname": "CivicStack",
+        "f_hack_github": "https://github.com/civicstack",
+        "f_hack_size": 2,
+        "f_hack_skills": ["js", "python", "design", "data"],
+        "f_hack_start": "2026-05-09T08:30:00.000Z",
+        "f_hack_level": 3,
+        "f_hack_cv": null
+      },
+      "submitted_at": "2026-04-22T08:10:00.000Z",
+      "status": "confirmed"
+    }
+  ],
+
+  "ai_prompt_sources": [
+    {
+      "id": "src_conf2026_brief",
+      "event_id": "evt_conf2026",
+      "label": "Brief organisateur",
+      "kind": "text",
+      "content": "DevCivitas 2026 se tient du 14 au 16 septembre au Centre de conferences de Libreville. Trois billets : Standard (50000 XAF), VIP (150000 XAF, acces salon + dejeuner), Etudiant (gratuit sur justificatif). Trois ateliers au choix, places limitees a 40 personnes chacun. Le badge et la confirmation sont envoyes par email sous 48h.",
+      "created_at": "2026-06-02T09:00:00.000Z"
+    },
+    {
+      "id": "src_gala_brief",
+      "event_id": "evt_gala",
+      "label": "Brief organisateur",
+      "kind": "text",
+      "content": "Le Gala de charite Lumiere se tient le 20 novembre 2026. Trois niveaux de table selon le montant du don : Bronze (des 500 EUR), Argent (des 1500 EUR), Or (des 3000 EUR, table VIP avec champagne). Les dons sont deductibles a hauteur de 66% selon la legislation en vigueur. Tenue de soiree exigee.",
+      "created_at": "2026-06-06T09:00:00.000Z"
+    }
+  ]
+}
