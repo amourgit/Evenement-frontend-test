@@ -6,7 +6,7 @@ import {
   Star, Share2, ArrowUpRight, GraduationCap, Users, Shield, Link,
   Check, CheckCircle2, UserCheck, BarChart2, Trash2, Edit2, Settings
 } from 'lucide-react';
-import { BreadcrumbItem } from '../types';
+import { BreadcrumbItem } from '@/src/types';
 
 interface GeneralHomeProps {
   onNavigateDeep: (path: BreadcrumbItem[]) => void;

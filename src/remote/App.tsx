@@ -123,13 +123,17 @@ function AdminRoute({ basePath }: { basePath: string }) {
   return <AdminApp onBackToPublic={() => navigate(`${basePath}/`)} />;
 }
 
+function GeneralRoute({ basePath }: { basePath: string }) {
+  return <GeneralPage basePath={basePath} />;
+}
+
 // ── Routeur CIVITAS ───────────────────────────────────────────
 function CivitasRoutes({ basePath }: { basePath: string }) {
   const bp = basePath === '/' ? '' : basePath;
   return (
       <Routes>
-        <Route path={`${bp}/`}         element={<HomePage />} />
-        <Route path={`${bp}`}          element={<HomePage />} />
+        <Route path={`${bp}/`}         element={<GeneralRoute basePath={bp} />} />
+        <Route path={`${bp}`}          element={<GeneralRoute basePath={bp} />} />
         <Route path={`${bp}/contact`}  element={<ContactPage />} />
         <Route path={`${bp}/events`}   element={<EventsHomeRoute basePath={bp} />} />
         <Route path={`${bp}/events/not-found`} element={<EventNotFoundRoute basePath={bp} />} />
@@ -138,7 +142,7 @@ function CivitasRoutes({ basePath }: { basePath: string }) {
         <Route path={`${bp}/events/:id/confirmation`} element={<ConfirmationRoute basePath={bp} />} />
         <Route path={`${bp}/admin/*`}  element={<AdminRoute basePath={bp} />} />
         {/* Catch-all → Home */}
-        <Route path="*"                element={<HomePage />} />
+        <Route path="*"                element={<GeneralRoute basePath={bp} />} />
       </Routes>
   );
 }
