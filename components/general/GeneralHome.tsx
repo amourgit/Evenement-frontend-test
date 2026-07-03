@@ -472,9 +472,9 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
         </div>
 
         {/* Bottom row: Navigation Links & Tabs matching the mockup */}
-        <div className="border-t border-slate-100 pt-2.5 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+        <div className="border-t border-slate-150 pt-2.5 flex flex-wrap items-center justify-between gap-2 text-[11px]">
           <div className="flex flex-wrap items-center gap-1.5">
-            <button className="px-3 py-1 text-indigo-700 bg-indigo-50/70 border border-indigo-100 rounded-[2px] font-bold cursor-pointer">
+            <button className="px-3 py-1 text-indigo-700 bg-indigo-50/70 border border-indigo-150 rounded-[2px] font-bold cursor-pointer">
               Accueil Hub
             </button>
             <button 
@@ -561,7 +561,7 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
                   </div>
 
                   <div className="p-3 space-y-1.5">
-                    <h3 className="text-[11px] font-bold text-slate-800 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-[11px] font-bold text-slate-850 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
                       {news.title}
                     </h3>
                   </div>
@@ -586,7 +586,7 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
             
             {/* Quick Links (Liens Rapides Favoris) Container - MS SharePoint Style */}
             <div className="bg-white border border-slate-200 rounded-[4px] p-4 shadow-sm space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div className="flex items-center justify-between border-b border-slate-150 pb-2">
                 <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                   <Star className="w-3.5 h-3.5 text-[#0078d4] fill-[#0078d4]" />
                   Raccourcis Favoris (Quick Links)
@@ -735,7 +735,7 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
             </div>
 
             {/* Brèves administratives Container */}
-            <div className="bg-white border border-slate-200 rounded-[4px] p-4 divide-y divide-slate-100 flex flex-col justify-between flex-1">
+            <div className="bg-white border border-slate-200 rounded-[4px] p-4 divide-y divide-slate-150 flex flex-col justify-between flex-1">
               <div className="space-y-3 pb-3">
                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">Brèves administratives</span>
                 <div className="space-y-4">
@@ -872,7 +872,7 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
                   </h4>
                   <p className="text-[9px] text-slate-400">Ressource académique officielle</p>
                 </div>
-                <ArrowUpRight className="w-3 h-3 text-slate-300 group-hover:text-slate-500 transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-slate-350 group-hover:text-slate-500 transition-colors" />
               </div>
             ))}
           </div>
@@ -916,7 +916,7 @@ export default function GeneralHome({ onNavigateDeep, searchQuery }: GeneralHome
                     onClick={() => toggleStar(site.id)}
                     className="text-white hover:scale-110 transition-transform cursor-pointer"
                   >
-                    <Star className={`w-4.5 h-4.5 ${isStarred ? 'fill-yellow-400 stroke-yellow-400 text-yellow-400' : 'text-white'}`} />
+                    <Star className={`w-4.5 h-4.5 ${isStarred ? 'fill-yellow-350 stroke-yellow-350 text-yellow-350' : 'text-white'}`} />
                   </button>
                 </div>
 

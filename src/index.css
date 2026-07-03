@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "../styles/globals.css";
 
 /* Reset de base */
 *, *::before, *::after { box-sizing: border-box; }

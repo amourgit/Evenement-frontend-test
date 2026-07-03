@@ -62,7 +62,7 @@ export function EventsHomePage({ onSelectEvent }: EventsHomePageProps) {
           <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-none uppercase">
             Participez activement aux initiatives de votre commune
           </h2>
-          <p className="text-xs md:text-sm text-sky-100 leading-relaxed font-semibold">
+          <p className="text-xs md:text-sm text-sky-150 leading-relaxed font-semibold">
             Inscrivez-vous aux conseils municipaux, déposez des candidatures pour les événements associatifs locaux ou proposez vos représentations d'artistes en toute simplicité.
           </p>
         </div>

@@ -137,7 +137,7 @@ export default function Dashboard({
         <div className="bg-slate-50 border border-slate-200 p-3 rounded-[6px] shadow-xs min-w-[180px] shrink-0 self-stretch md:self-auto flex flex-col justify-between">
           <div>
             <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">Compte actif</p>
-            <p className="text-[11px] font-bold text-slate-800 mt-0.5">{establishment.currentUser?.name}</p>
+            <p className="text-[11px] font-bold text-slate-850 mt-0.5">{establishment.currentUser?.name}</p>
             <p className="text-[10px] text-slate-500">{establishment.currentUser?.profile}</p>
           </div>
           <div className="mt-2 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
@@ -247,7 +247,7 @@ export default function Dashboard({
                     </p>
                   </div>
 
-                  <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+                  <div className="mt-3 pt-2 border-t border-slate-150 flex items-center justify-between text-[10px]">
                     <span className="text-slate-400">
                       Salle : <span className="font-bold text-slate-600">{course.room}</span>
                     </span>

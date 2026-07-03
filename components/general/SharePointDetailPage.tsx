@@ -100,7 +100,7 @@ export default function SharePointDetailPage({ postId, onBack }: SharePointDetai
       <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
         
         {/* SharePoint Branding Library Header Bar */}
-        <div className="px-6 py-3 border-b border-slate-100 flex items-center justify-between bg-[#faf9f8]">
+        <div className="px-6 py-3 border-b border-slate-150 flex items-center justify-between bg-[#faf9f8]">
           <div className="flex items-center gap-4">
             <button 
               onClick={onBack}
@@ -365,7 +365,7 @@ export default function SharePointDetailPage({ postId, onBack }: SharePointDetai
           {/* Slideshow Title - A */}
           <div className="bg-white border border-slate-200 rounded-[4px] p-5 shadow-sm space-y-4 flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div className="flex items-center justify-between border-b border-slate-150 pb-2">
                 {isEditing ? (
                   <input 
                     type="text"
@@ -434,7 +434,7 @@ export default function SharePointDetailPage({ postId, onBack }: SharePointDetai
           {/* Slideshow Title - B */}
           <div className="bg-white border border-slate-200 rounded-[4px] p-5 shadow-sm space-y-4 flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div className="flex items-center justify-between border-b border-slate-150 pb-2">
                 {isEditing ? (
                   <input 
                     type="text"
@@ -547,7 +547,7 @@ export default function SharePointDetailPage({ postId, onBack }: SharePointDetai
               )}
 
               {/* Styled Mock Vector Road Map */}
-              <div className="relative h-44 rounded-sm border border-slate-100 overflow-hidden bg-[#e5e3df] flex flex-col justify-between p-2 select-none shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)]">
+              <div className="relative h-44 rounded-sm border border-slate-150 overflow-hidden bg-[#e5e3df] flex flex-col justify-between p-2 select-none shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)]">
                 {/* Simplistic stylized map design */}
                 <div className="absolute inset-0 opacity-40">
                   <div className="absolute left-10 top-0 bottom-0 w-2.5 bg-yellow-100 border-l border-r border-slate-300 transform rotate-12"></div>
@@ -571,7 +571,7 @@ export default function SharePointDetailPage({ postId, onBack }: SharePointDetai
 
                 {/* Zoom +/- controls */}
                 <div className="absolute right-2 bottom-2 bg-white border border-slate-200 rounded shadow-sm flex flex-col text-[10px] font-black text-slate-600">
-                  <button className="px-1.5 py-0.5 hover:bg-slate-100 border-b border-slate-100">+</button>
+                  <button className="px-1.5 py-0.5 hover:bg-slate-100 border-b border-slate-150">+</button>
                   <button className="px-1.5 py-0.5 hover:bg-slate-100">-</button>
                 </div>
               </div>
