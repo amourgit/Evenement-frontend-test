@@ -1,7 +1,7 @@
 import { ApiError } from "@/lib/api/client";
-import type { FormConfiguration, FormConfigurationSaveResponse } from "@/types/formConfig";
+import type { FormConfiguration, FormConfigurationSaveResponse } from "@/src/types/formConfig";
 import { buildFormConfiguration, type BuilderDoc } from "@/lib/utils/formConfig";
-import type { EventRecord } from "@/types/event";
+import type { EventRecord } from "@/src/types/event";
 import { getDb, saveDb, mockDelay, newId } from "./mockDb";
 import { getCurrentMockAdmin } from "./mockAuthApi";
 import { ensureUniqueSlug, slugify } from "./mockUtils";

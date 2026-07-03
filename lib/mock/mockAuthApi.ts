@@ -1,5 +1,5 @@
 import { ApiError, setAuthToken } from "@/lib/api/client";
-import type { AuthSession, LoginInput, RegisterInput, AdminUser } from "@/types/user";
+import type { AuthSession, LoginInput, RegisterInput, AdminUser } from "@/src/types/user";
 import { getDb, saveDb, mockDelay, newId, type MockAdmin } from "./mockDb";
 
 const TOKEN_PREFIX = "mock-session";

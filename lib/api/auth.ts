@@ -1,7 +1,7 @@
 import { api, setAuthToken } from "./client";
-import type { AuthSession, LoginInput, RegisterInput, AdminUser } from "@/types/user";
+import type { AuthSession, LoginInput, RegisterInput, AdminUser } from "@/src/types/user";
 import { USE_MOCK_API } from "./config";
-import { mockAuthApi } from "@/mock/mockAuthApi";
+import { mockAuthApi } from "@/lib/mock/mockAuthApi";
 
 /**
  * Toutes les routes ci-dessous ciblent le backoffice. Cote public

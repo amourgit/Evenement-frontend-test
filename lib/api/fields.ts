@@ -1,7 +1,7 @@
 import { api } from "./client";
-import type { FieldDefinition, FieldDefinitionInput, FieldSection } from "@/types/field";
+import type { FieldDefinition, FieldDefinitionInput, FieldSection } from "@/src/types/field";
 import { USE_MOCK_API } from "./config";
-import { mockFieldsApi } from "@/mock/mockFieldsApi";
+import { mockFieldsApi } from "@/lib/mock/mockFieldsApi";
 
 // ============================================================================
 // MODERN API (used by FormBuilderPage, etc.)

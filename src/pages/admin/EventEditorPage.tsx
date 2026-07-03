@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Save } from 'lucide-react';
-import { eventsApi } from '@/lib/api/events';
-import { EventRecord, EventTheme } from '@/src/types/event';
+import { fetchEventById, updateEvent } from '@/lib/api/events';
+import { Event, EventTheme } from '@/src/types/event';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,7 +13,7 @@ interface EventEditorPageProps {
 }
 
 export function EventEditorPage({ eventId, onBack }: EventEditorPageProps) {
-  const [event, setEvent] = useState<EventRecord | null>(null);
+  const [event, setEvent] = useState<Event | null>(null);
   const [activeTab, setActiveTab] = useState<'info' | 'theme'>('info');
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -28,11 +28,15 @@ export function EventEditorPage({ eventId, onBack }: EventEditorPageProps) {
 
   const loadEvent = async () => {
     try {
-      const data = await eventsApi.getById(eventId);
+      const data = await fetchEventById(eventId);
+      if (!data) {
+        setEvent(null);
+        return;
+      }
       setEvent(data);
       setTitle(data.title);
       setDescription(data.description);
-      setShortDesc(data.short_description || '');
+      setShortDesc(data.shortDescription || '');
       setDate(data.date);
       setLocation(data.location);
       setCategory(data.category);
@@ -53,10 +57,10 @@ export function EventEditorPage({ eventId, onBack }: EventEditorPageProps) {
     if (!event) return;
 
     try {
-      await eventsApi.update(eventId, {
+      await updateEvent(eventId, {
         title,
         description,
-        short_description: shortDesc,
+        shortDescription: shortDesc,
         date,
         location,
         category,
@@ -72,7 +76,7 @@ export function EventEditorPage({ eventId, onBack }: EventEditorPageProps) {
   const handleThemeChange = async (newTheme: EventTheme) => {
     if (!event) return;
     try {
-      await eventsApi.update(eventId, { theme: newTheme });
+      await updateEvent(eventId, { theme: newTheme });
       setEvent(prev => prev ? { ...prev, theme: newTheme } : null);
     } catch (e) {
       console.error(e);
@@ -128,56 +132,70 @@ export function EventEditorPage({ eventId, onBack }: EventEditorPageProps) {
       {activeTab === 'info' && (
         <form onSubmit={handleSaveInfo} className="bg-white border border-slate-200 p-6 rounded-xl space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-semibold">
-            <Input
-              label="Titre Officiel de l'Événement"
-              required
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Titre Officiel de l'Événement</label>
+              <Input
+                required
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
 
-            <Input
-              label="Thématique / Catégorie"
-              required
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Thématique / Catégorie</label>
+              <Input
+                required
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              />
+            </div>
 
-            <Input
-              label="Organisateur"
-              required
-              value={organizer}
-              onChange={(e) => setOrganizer(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Organisateur</label>
+              <Input
+                required
+                value={organizer}
+                onChange={(e) => setOrganizer(e.target.value)}
+              />
+            </div>
 
-            <Input
-              label="Date de l'événement"
-              type="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Date de l'événement</label>
+              <Input
+                type="date"
+                required
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
 
-            <Input
-              label="Adresse / Lieu de rencontre"
-              required
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Adresse / Lieu de rencontre</label>
+              <Input
+                required
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
 
-            <Input
-              label="Description courte (Résumé)"
-              value={shortDesc}
-              onChange={(e) => setShortDesc(e.target.value)}
-            />
+            <div>
+              <label className="mb-1 block text-xs text-slate-600">Description courte (Résumé)</label>
+              <Input
+                value={shortDesc}
+                onChange={(e) => setShortDesc(e.target.value)}
+              />
+            </div>
           </div>
 
-          <Textarea
-            label="Description Longue / Consignes d'inscription"
-            required
-            rows={5}
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <div>
+            <label className="mb-1 block text-xs text-slate-600">Description Longue / Consignes d'inscription</label>
+            <Textarea
+              required
+              rows={5}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
 
           <Button type="submit" className="w-full sm:w-auto text-xs cursor-pointer">
             <Save className="w-3.5 h-3.5 mr-1.5" />

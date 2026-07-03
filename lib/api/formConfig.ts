@@ -1,7 +1,7 @@
 import { api } from "./client";
-import type { FormConfiguration, FormConfigurationSaveResponse } from "@/types/formConfig";
+import type { FormConfiguration, FormConfigurationSaveResponse } from "@/src/types/formConfig";
 import { USE_MOCK_API } from "./config";
-import { mockFormConfigApi } from "@/mock/mockFormConfigApi";
+import { mockFormConfigApi } from "@/lib/mock/mockFormConfigApi";
 
 /**
  * Ces routes transportent TOUJOURS le JSON de configuration complet

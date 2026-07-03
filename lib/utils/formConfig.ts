@@ -1,8 +1,8 @@
-import type { EventTheme, EventAIConfig, EventStatus } from "@/types/event";
-import { DEFAULT_EVENT_THEME, DEFAULT_AI_CONFIG } from "@/types/event";
-import type { FieldDefinition, FieldSection } from "@/types/field";
-import type { FormConfiguration } from "@/types/formConfig";
-import { FORM_CONFIG_FORMAT, FORM_CONFIG_SCHEMA_VERSION } from "@/types/formConfig";
+import type { EventTheme, EventAIConfig, EventStatus } from "@/src/types/event";
+import { DEFAULT_EVENT_THEME, DEFAULT_AI_CONFIG } from "@/src/types/event";
+import type { FieldDefinition, FieldSection } from "@/src/types/field";
+import type { FormConfiguration } from "@/src/types/formConfig";
+import { FORM_CONFIG_FORMAT, FORM_CONFIG_SCHEMA_VERSION } from "@/src/types/formConfig";
 
 const APP_NAME = "CIVITAS Forms Builder";
 const APP_VERSION = "0.1.0";

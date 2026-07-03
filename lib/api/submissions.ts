@@ -1,7 +1,7 @@
 import { api } from "./client";
-import type { SubmissionInput, SubmissionResult, SubmissionRecord } from "@/types/submission";
+import type { SubmissionInput, SubmissionResult, SubmissionRecord } from "@/src/types/submission";
 import { USE_MOCK_API } from "./config";
-import { mockSubmissionsApi } from "@/mock/mockSubmissionsApi";
+import { mockSubmissionsApi } from "@/lib/mock/mockSubmissionsApi";
 
 const realSubmissionsApi = {
   /**

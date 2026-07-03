@@ -1,4 +1,4 @@
-import type { FieldDefinition } from "@/types/field";
+import type { FieldDefinition } from "@/src/types/field";
 import { FieldRenderer } from "@/components/form/FieldRenderer";
 import { cn } from "@/lib/utils/cn";
 

@@ -1,7 +1,7 @@
 import seed from "./db.seed.json";
-import type { EventRecord } from "@/types/event";
-import type { AIPromptSource } from "@/types/ai";
-import type { SubmissionRecord } from "@/types/submission";
+import type { EventRecord } from "@/src/types/event";
+import type { AIPromptSource } from "@/src/types/ai";
+import type { SubmissionRecord } from "@/src/types/submission";
 
 /**
  * BASE DE DONNEES FICTIVE (mode developpement)

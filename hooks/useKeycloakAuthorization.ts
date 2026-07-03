@@ -6,11 +6,8 @@
 // ============================================================
 
 import { useState, useEffect, useCallback } from 'react';
-import keycloakAuthorizationService, {
 import { getCurrentRealm } from '@/lib/realm-resolver';
-
-/** Realm courant (dynamique via sous-domaine) */
-function getRealm(): string { return getCurrentRealm().realm; }
+import keycloakAuthorizationService, {
   type ResourceServerRepresentation,
   type ResourceRepresentation,
   type ScopeRepresentation,
@@ -22,6 +19,9 @@ function getRealm(): string { return getCurrentRealm().realm; }
   type CreatePolicyPayload,
   type AuthzListFilters,
 } from '@/services/iam/keycloakAuthorizationService';
+
+/** Realm courant (dynamique via sous-domaine) */
+function getRealm(): string { return getCurrentRealm().realm; }
 
 // Realm résolu dynamiquement via sous-domaine (voir getRealm())
 

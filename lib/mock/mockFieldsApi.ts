@@ -1,5 +1,5 @@
 import { ApiError } from "@/lib/api/client";
-import type { FieldDefinition, FieldDefinitionInput, FieldSection } from "@/types/field";
+import type { FieldDefinition, FieldDefinitionInput, FieldSection } from "@/src/types/field";
 import { getDb, saveDb, mockDelay, newId } from "./mockDb";
 import { getCurrentMockAdmin } from "./mockAuthApi";
 import { deepClone } from "./mockUtils";

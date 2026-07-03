@@ -1,5 +1,5 @@
-import type { FieldDataType, FieldDefinition, FieldDefinitionInput, FieldSection } from "@/types/field";
-import type { EventTheme, EventAIConfig } from "@/types/event";
+import type { FieldDataType, FieldDefinition, FieldDefinitionInput, FieldSection } from "@/src/types/field";
+import type { EventTheme, EventAIConfig } from "@/src/types/event";
 import type { BuilderDoc, EventMetaDraft } from "@/lib/utils/formConfig";
 
 export type Selection =

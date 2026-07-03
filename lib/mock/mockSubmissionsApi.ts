@@ -1,5 +1,5 @@
 import { ApiError } from "@/lib/api/client";
-import type { SubmissionInput, SubmissionResult, SubmissionRecord } from "@/types/submission";
+import type { SubmissionInput, SubmissionResult, SubmissionRecord } from "@/src/types/submission";
 import { validateSubmission } from "@/lib/validation/fieldValidator";
 import { getDb, saveDb, mockDelay, newId } from "./mockDb";
 import { getCurrentMockAdmin } from "./mockAuthApi";

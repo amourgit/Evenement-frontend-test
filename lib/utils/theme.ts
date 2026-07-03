@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import type { EventTheme } from "@/types/event";
+import type { EventTheme } from "@/src/types/event";
 
 const RADIUS_MAP: Record<EventTheme["radius"], string> = {
   sharp: "0px",

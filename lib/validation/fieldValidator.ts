@@ -1,6 +1,6 @@
-import type { FieldDefinition } from "@/types/field";
-import type { SubmissionAnswers } from "@/types/submission";
-import type { FormField } from "@/types/field";
+import type { FieldDefinition } from "@/src/types/field";
+import type { SubmissionAnswers } from "@/src/types/submission";
+import type { FormField } from "@/src/types/field";
 
 export interface FieldValidationError {
   field_id: string;

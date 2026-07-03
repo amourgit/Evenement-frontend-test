@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { FieldDefinition, FieldSection } from "@/types/field";
-import { FIELD_TYPE_LABELS } from "@/types/field";
+import type { FieldDefinition, FieldSection } from "@/src/types/field";
+import { FIELD_TYPE_LABELS } from "@/src/types/field";
 import type { BuilderAction, Selection } from "./builderReducer";
 import { cn } from "@/lib/utils/cn";
 

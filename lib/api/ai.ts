@@ -5,9 +5,9 @@ import type {
   AISchemaSuggestionRequest,
   AIChatRequest,
   AIChatResponse,
-} from "@/types/ai";
+} from "@/src/types/ai";
 import { USE_MOCK_API } from "./config";
-import { mockAiApi } from "@/mock/mockAiApi";
+import { mockAiApi } from "@/lib/mock/mockAiApi";
 
 const realAiApi = {
   /** Backoffice — televerse un texte ou fichier de prompt pour nourrir l'IA d'un evenement */

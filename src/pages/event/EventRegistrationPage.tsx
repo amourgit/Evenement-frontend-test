@@ -101,7 +101,6 @@ export function EventRegistrationPage({ eventId: propEventId, onBack, onSubmitSu
 
   const renderField = (field: FormField) => {
     const value = answers[field.id] || '';
-    const error = errors[field.id];
 
     switch (field.type) {
       case 'text':
@@ -114,7 +113,6 @@ export function EventRegistrationPage({ eventId: propEventId, onBack, onSubmitSu
             value={value}
             onChange={(e) => handleSetFieldValue(field.id, e.target.value)}
             placeholder={field.placeholder}
-            error={error}
             required={field.validation.required}
           />
         );
@@ -124,7 +122,6 @@ export function EventRegistrationPage({ eventId: propEventId, onBack, onSubmitSu
             value={value}
             onChange={(e) => handleSetFieldValue(field.id, e.target.value)}
             placeholder={field.placeholder}
-            error={error}
             required={field.validation.required}
             rows={4}
           />
@@ -133,23 +130,27 @@ export function EventRegistrationPage({ eventId: propEventId, onBack, onSubmitSu
         return (
           <Select
             value={value}
-            onChange={(e) => handleSetFieldValue(field.id, e.target.value)}
-            error={error}
-            required={field.validation.required}
+            onValueChange={(val) => handleSetFieldValue(field.id, val)}
           >
-            <option value="">Sélectionner...</option>
-            {field.options?.map(opt => (
-              <option key={opt} value={opt}>{opt}</option>
-            ))}
+            <SelectTrigger>
+              <SelectValue placeholder="Sélectionner..." />
+            </SelectTrigger>
+            <SelectContent>
+              {field.options?.map(opt => (
+                <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+              ))}
+            </SelectContent>
           </Select>
         );
       case 'checkbox':
         return (
-          <Checkbox
-            label={field.label}
-            checked={Boolean(value)}
-            onChange={(e) => handleSetFieldValue(field.id, e.target.checked)}
-          />
+          <label className="flex items-center gap-2 cursor-pointer">
+            <Checkbox
+              checked={Boolean(value)}
+              onCheckedChange={(checked) => handleSetFieldValue(field.id, checked === true)}
+            />
+            <span className="text-xs">{field.label}</span>
+          </label>
         );
       case 'radio':
         return (
@@ -176,7 +177,6 @@ export function EventRegistrationPage({ eventId: propEventId, onBack, onSubmitSu
             value={value}
             onChange={(e) => handleSetFieldValue(field.id, e.target.value)}
             placeholder={field.placeholder}
-            error={error}
             required={field.validation.required}
           />
         );

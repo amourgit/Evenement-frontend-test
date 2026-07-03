@@ -6,8 +6,8 @@ import type {
   AIChatRequest,
   AIChatResponse,
   AIChatMessage,
-} from "@/types/ai";
-import type { FieldDataType } from "@/types/field";
+} from "@/src/types/ai";
+import type { FieldDataType } from "@/src/types/field";
 import { getDb, saveDb, mockDelay, newId } from "./mockDb";
 import { deepClone } from "./mockUtils";
 

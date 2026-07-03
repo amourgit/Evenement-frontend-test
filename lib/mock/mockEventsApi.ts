@@ -1,5 +1,5 @@
 import { ApiError } from "@/lib/api/client";
-import type { EventRecord, EventSummary, EventInput } from "@/types/event";
+import type { EventRecord, EventSummary, EventInput } from "@/src/types/event";
 import { getDb, saveDb, mockDelay, newId } from "./mockDb";
 import { getCurrentMockAdmin } from "./mockAuthApi";
 import { deepClone, ensureUniqueSlug, slugify } from "./mockUtils";

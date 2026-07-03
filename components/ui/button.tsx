@@ -13,6 +13,10 @@ const buttonVariants = cva(
           "border border-border/50 hover:border-border/15 bg-primary/20 focus-visible:bg-primary/30 hover:bg-primary/30 backdrop-blur-sm text-primary ring-1 ring-offset-primary/10 ring-border/10 ring-offset-2 hover:ring-primary/15 hover:ring-offset-4 hover:ring-offset-black/20 shadow-button hover:shadow-button-hover",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        danger:
+          "border border-destructive/50 bg-destructive/10 text-destructive hover:bg-destructive/20 hover:border-destructive",
         iconButton:
           "border border-border/50 hover:border-border/15 bg-primary disabled:bg-primary/40 hover:bg-primary backdrop-blur-sm disabled:text-primary-foreground/50 text-primary-foreground ring-1 ring-offset-transparent ring-transparent ring-offset-2 hover:ring-primary/15 hover:ring-offset-4 hover:ring-offset-black/20 shadow-button hover:shadow-button-hover",
       },
@@ -40,17 +44,29 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  /** Affiche un spinner et desactive le bouton pendant une action asynchrone */
+  isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, shine, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, shine, isLoading = false, disabled, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className, shine }))}
         ref={ref}
+        disabled={disabled || isLoading}
         {...props}
-      />
+      >
+        {isLoading ? (
+          <>
+            <span className="size-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+            {children}
+          </>
+        ) : (
+          children
+        )}
+      </Comp>
     );
   }
 );
