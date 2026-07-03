@@ -28,7 +28,7 @@ export function ConfirmationPage({ receiptId, onReturnHome }: ConfirmationPagePr
       {/* Receipt card */}
       <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 font-semibold space-y-2">
         <span className="block text-slate-400 text-[10px] uppercase tracking-wider font-black">Référence de Dossier</span>
-        <span className="font-mono text-xs text-[#0078d4] font-bold block bg-white px-3 py-1 rounded border border-slate-150 shadow-xs uppercase select-all">
+        <span className="font-mono text-xs text-[#0078d4] font-bold block bg-white px-3 py-1 rounded border border-slate-100 shadow-xs uppercase select-all">
           {receiptId}
         </span>
         <p className="text-[10px] text-slate-400 italic mt-1">

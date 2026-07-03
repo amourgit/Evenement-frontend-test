@@ -176,7 +176,7 @@ export default function SharePointSidebar() {
           <div className="border border-slate-200 rounded-[2px] overflow-hidden">
             <button 
               onClick={() => setIsAOpen(!isAOpen)}
-              className="w-full bg-[#faf9f8] px-3 py-2 flex items-center justify-between text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors border-b border-slate-150"
+              className="w-full bg-[#faf9f8] px-3 py-2 flex items-center justify-between text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors border-b border-slate-100"
             >
               <span className="flex items-center gap-2">
                 <Folder className="w-4 h-4 text-slate-500" />
@@ -249,7 +249,7 @@ export default function SharePointSidebar() {
           <div className="border border-slate-200 rounded-[2px] overflow-hidden">
             <button 
               onClick={() => setIsBOpen(!isBOpen)}
-              className="w-full bg-[#faf9f8] px-3 py-2 flex items-center justify-between text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors border-b border-slate-150"
+              className="w-full bg-[#faf9f8] px-3 py-2 flex items-center justify-between text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors border-b border-slate-100"
             >
               <span className="flex items-center gap-2">
                 <Folder className="w-4 h-4 text-slate-500" />

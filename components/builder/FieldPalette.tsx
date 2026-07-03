@@ -44,7 +44,7 @@ export function FieldPalette({ className = '', onPick }: FieldPaletteProps) {
           key={item.type}
           type="button"
           onClick={() => onPick(item.type)}
-          className={`flex items-center gap-2 p-2 rounded border border-slate-150 hover:border-indigo-300 hover:shadow-sm text-[10px] font-bold text-slate-700 transition-all text-left cursor-pointer ${item.bgClass}`}
+          className={`flex items-center gap-2 p-2 rounded border border-slate-100 hover:border-indigo-300 hover:shadow-sm text-[10px] font-bold text-slate-700 transition-all text-left cursor-pointer ${item.bgClass}`}
         >
           {item.icon}
           <span className="truncate">{item.label}</span>
